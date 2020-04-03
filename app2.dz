@@ -1,0 +1,27 @@
+//custom functions
+
+
+/**
+ * Converts US dollars to Swiss francs.
+ * 
+ * @param {number} dollars The total number of dollars.
+ * @return {number} swissFrancs The converted total of Swiss francs.
+ * @customfunction
+ */
+function USDTOCHF(dollars,d,a){
+  var swissFrancs = dollars * d * a; 
+  return swissFrancs;
+}
+
+/**
+ * Converts US dollars to Swiss francs.
+ * 
+ * @param {a1} dollars The total number of dollars.
+ * @param {a2} dollars The total number of dollars.
+ * @param {a3} dollars The total number of dollars.
+ * @return {number} swissFrancs The converted total of Swiss francs.
+ * @customfunction
+ */
+function MYMULTIPLY(a1,a2,a3) {
+  return a1*a2*a3;
+}

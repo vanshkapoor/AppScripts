@@ -1,0 +1,30 @@
+function basic{
+
+    var app = SpreadsheetApp.getActiveSpreadsheet();
+    var activeSheet = app.getActiveSheet();
+
+    //CONSOLE LOG IN APPSCRIPTS
+    Logger.log("text");
+    Logger.clear();
+
+
+    //get range
+    activeSheet.getRange(A1,D3);
+    activeSheet.getRange(1,2); //1 = row index && 2 = column index
+    activeSheet.getRange(r,c).getValue();
+    activeSheet.getRange(r,c).setValue("some text");
+
+    activeSheet.getRange(r,c,no_of_rows,no_of_columns).setValue();
+
+
+
+    //loop is simplle
+    for(var i=x;i<y;i++)
+    {
+
+    }
+
+
+
+    
+}

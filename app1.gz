@@ -1,0 +1,37 @@
+function header() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  var sheet = spreadsheet.getActiveSheet();
+  sheet.getRange(
+   spreadsheet.getCurrentCell(), spreadsheet.getCurrentCell(), 10, 1).activate();
+  spreadsheet.getActiveRangeList().setBackground('#4c1130')
+  .setFontColor('#ffffff')
+  .setFontWeight('bold');
+  spreadsheet.getActiveSheet().setFrozenRows(1);
+};
+
+function check() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getRange('2:2').activate();
+  spreadsheet.getActiveRangeList().setFontStyle('italic')
+  .setFontColor('#999999')
+  .setFontWeight('bold');
+};
+
+
+function Header2(){  
+  var spreadsheet = SpreadsheetApp.getActive();
+  var sheet = spreadsheet.getActiveSheet();
+  sheet.getRange(
+    spreadsheet.getCurrentCell().getRow(),
+    1, 1, sheet.getMaxColumns()).activate();
+  spreadsheet.getActiveRangeList().setBackground('#4c1130')
+  .setFontColor('#ffffff')
+  .setFontWeight('bold');
+  spreadsheet.getActiveSheet().setFrozenRows(1);
+};
+
+function cell() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getRange('8:8').activate();
+  spreadsheet.getActiveRangeList().setFontWeight('bold');
+};
