@@ -1,0 +1,132 @@
+//Important file
+/** @OnlyCurrentDoc */
+
+function header() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  var sheet = spreadsheet.getActiveSheet();
+  sheet.getRange(
+   spreadsheet.getCurrentCell().getRow() , 1, 1, 1).activate();
+  spreadsheet.getActiveRangeList().setBackground('#4c1130')
+  .setFontColor('#ffffff')
+  .setFontWeight('bold');
+  spreadsheet.getActiveSheet().setFrozenRows(1);
+};
+
+function check() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getRange('2:2').activate();
+  spreadsheet.getActiveRangeList().setFontStyle('italic')
+  .setFontColor('#999999')
+  .setFontWeight('bold');
+};
+
+
+function Header2(){  
+  var spreadsheet = SpreadsheetApp.getActive();
+  var sheet = spreadsheet.getActiveSheet();
+  sheet.getRange(
+    spreadsheet.getCurrentCell().getRow(),
+    1, 1, sheet.getMaxColumns()).activate();
+  spreadsheet.getActiveRangeList().setBackground('#4c1130')
+  .setFontColor('#ffffff')
+  .setFontWeight('bold');
+  spreadsheet.getActiveSheet().setFrozenRows(1);
+};
+
+function cell() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getRange('8:8').activate();
+  spreadsheet.getActiveRangeList().setFontWeight('bold');
+};
+
+
+
+// Update data in different sheets
+function newsheetvalue()
+{
+ var targetsheet = SpreadhsheetApp.getActiveSpreadsheet().getSheetByName("sheet2");
+  targetsheet.getRange(1,1).setValue(1);
+}
+
+// Clear the mess
+function clearmess()
+{
+  var app = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = app.getActiveSheet();
+  acitveSheet.getRange("A1:F11").clearContent();
+//  OR
+  activeSheet.getRange("A1:F11").clear();
+// OR
+  activeSheet.getRange("A1:F11").clearFormat();
+  
+ }
+
+
+
+
+function removevalues() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  var sheet = spreadsheet.getActiveSheet();
+  sheet.getRange(1, 1, sheet.getMaxRows(), sheet.getMaxColumns()).activate();
+  spreadsheet.getActiveRangeList().clear({contentsOnly: true, skipFilteredRows: true});
+};
+
+function setvalue() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getRange('C19').activate();
+  spreadsheet.getCurrentCell().setValue('vsbsh');
+  spreadsheet.getRange('E21').activate();
+};
+
+
+
+//GET RANGE OF VALUES
+function getRange()
+{  
+  var spreadsheet = SpreadsheetApp.getActive();
+  var sheet = spreadsheet.getActiveSheet();
+  var temp = sheet.getRange("A2:B12").getValues();
+  Logger.log(temp);
+  //an array is returned = [[],[],[]]
+  
+  
+  
+  sheet.getRange("A22:B32").setValues(temp);
+}
+
+function ViewData()
+{
+  var spreadsheet = SpreadsheetApp.getActive();
+  var sheet = spreadsheet.getActiveSheet();
+  
+  Logger.log(sheet.getCurrentCell().getRow());
+  Logger.log(sheet.getCurrentCell().getColumn());
+  //Logger.log(sheet.getCurrentCell().getCell(rowIndex, columnIndex));
+  
+}
+
+function loopAddData()
+{
+  var spreadsheet = SpreadsheetApp.getActive();
+  var sheet = spreadsheet.getActiveSheet();
+  
+  var lr = sheet.getLastRow();
+  Logger.log(lr);
+  var data = sheet.getRange("A2:E5").getValues();
+                                            
+  Logger.log(data.length);
+  Logger.log(data[0].length)
+  
+  Logger.log(data)
+  
+  
+  
+  for(var i=0;i<data.length;i++)
+  {
+    Logger.log(data[i]);
+    
+  }
+  
+  sheet.getRange(sheet.getCurrentCell().getRow(),sheet.getCurrentCell().getColumn(),data.length,data[0].length).setValue(data);
+  
+}
