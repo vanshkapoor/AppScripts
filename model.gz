@@ -21,3 +21,25 @@ function openModel()
     ui.alert('You closed the dialog.');
   }
 }
+
+
+//Model 2
+ var ui = SpreadsheetApp.getUi(); // Same variations.
+
+  var result = ui.alert(
+     'You are already logged in to TechKit',
+     'Want to Checkout our tools?',
+      ui.ButtonSet.YES_NO);
+
+  // Process the user's response.
+  if (result == ui.Button.YES) {
+    // User clicked "Yes".
+    ui.alert('Great!');
+  } else {
+    // User clicked "No" or X in the title bar.
+    logoutModel();
+    //ui.alert('Permission denied.');
+  }
+
+
+//SOURCE LINK = https://developers.google.com/apps-script/guides/dialogs
